@@ -43,4 +43,7 @@ func main() {
 	trainingData, testingData := data[:120], data[120:]
 
 	mlp.Train(trainingData, testingData, 10*time.Second)
+
+	mlp.Save("savednetworks", "MyMLP")
+	mlp.PrettyPrint("savednetworks", "MyMLP")
 }
