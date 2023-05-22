@@ -1,3 +1,4 @@
+
 # Lossless, a Go-Based ML Library
 ## Introduction and Overview
 Hi, my name is Egan Bosch, and I am currently a fourth-year computational mathematics major at UCLA. I have fallen in love with machine learning as of late, and also have a bit of an obsession with doing things myself from scratch. So, as a way to teach myself Go, as well as put some of the things I'd been learning into practice, I created my first Go ML library. Now, it worked, but it was slow, as I had created a kind of complicated "expression" data structure to automatically calculate gradients for me. However, this presented two problems:
@@ -12,4 +13,5 @@ Not ideal. So, a few months later, feeling inspired and after a sufficiently lon
 4. Get to creating!
 ## Example Projects
 **[Basic Perceptron:](https://github.com/EganBoschCodes/Lossless-MLP-Example)** This example walks you through the basics of getting started with Lossless, and training/saving your first network.
+
 **[Convolutional Neural Network:](https://github.com/EganBoschCodes/Lossless-MNIST-Example)** This example will walk you through how to import tabular data with Lossless' dataframes, save them into a usable format, and then train a convolutional neural network on the MNIST handwritten digits dataset.
