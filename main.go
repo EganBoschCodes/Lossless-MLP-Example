@@ -27,7 +27,7 @@ func GetSpiralDataset() []datasets.DataPoint {
 }
 
 func main() {
-	mlp := networks.Perceptron{}
+	mlp := networks.Sequential{}
 
 	mlp.Initialize(2,
 		&layers.LinearLayer{Outputs: 7},

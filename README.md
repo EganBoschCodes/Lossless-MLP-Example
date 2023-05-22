@@ -24,12 +24,12 @@ E ---> G(Output B)
 It will be similar to the basic MLP structure above, but instead of having 3 neurons in the hidden layer (the one between the inputs and outputs) and 2 outputs, we will have 7 neurons in the hidden layer and 3 outputs. Why? The toy dataset we will be working on has 2 inputs and 3 outputs, and having a few extra neurons in the hidden layer usually helps.
 
 ### The Network Initialization
-First, we have to build the network. This is a Multi-Layer Perceptron, so we will use the networks.Perceptron class.
+First, we have to build the network. This is a Multi-Layer Perceptron, so we will use the networks.Sequential class.
 ```Go
 import "github.com/EganBoschCodes/lossless/neuralnetworks/networks"
 
 func  main() {
-	mlp := networks.Perceptron{}
+	mlp := networks.Sequential{}
 }
 ```
 Now we have to specify the shape of the network. To do this, we will call the Initialize method of our MLP. The first argument is the size of the input vector, and then we pass the method all the layers we will be using. Let's use hyperbolic tangent, or `tanh`, as our activation function after our first layer, and `softmax` for the outputs, as is standard for classification.
@@ -42,7 +42,7 @@ import (
 )
 
 func  main() {
-	mlp := networks.Perceptron{}
+	mlp := networks.Sequential{}
 	mlp.Initialize(2,
 		&layers.LinearLayer{Outputs: 7},
 		&layers.TanhLayer{},
@@ -54,7 +54,7 @@ func  main() {
 Just like that, we have our perceptron set up. There are still some parameters that you can tweak, such as batch size and learning rate.
 ```Go
 func  main() {
-	mlp := networks.Perceptron{}
+	mlp := networks.Sequential{}
 	...
 	mlp.BatchSize = 32
 	mlp.LearningRate = 0.05
@@ -122,7 +122,7 @@ func  main() {
 Now, in your project directory, in the `savednetworks` folder, you will find a file titled `MyMLP.lsls`. This file is not human readable, as we wanted to be as file-size economical as possible for large networks, but now it is saved! And it get it back, it is rather simple as well.
 ```Go
 func  main() {
-	mlp := networks.Perceptron{}
+	mlp := networks.Sequential{}
 	mlp.Open("savednetworks", "MyMLP")
 }
 ```
